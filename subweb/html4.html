@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu lạc bộ</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="../navbar.css">
+</head>
+<body>
+  <!-- Thanh điều hướng -->
+  <nav class="navbar">
+    <div class="navbar-left">
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png" alt="Logo">
+            <span class="site-name">HĐTH</span>
+        </a>
+    </div>
+    <div class="navbar-right">
+        <div class="hamburger-menu">
+            <span class="hamburger-icon">&#9776;</span> <!-- Biểu tượng ba gạch -->
+            <div class="dropdown-menu">
+                <a href="html1.html">thành viên</a>
+                <a href="html2.html">thành tích</a>
+                <a href="html3.html">chương trình</a>
+                <a href="html4.html">câu lạc bộ</a>
+                <a href="https://drive.google.com/drive/folders/1IxRUbMKgPiv6Uofa2iAXNqjoI5s73Mys">tài liệu</a>
+                <a href="html6.html">kì thi</a>
+            </div>
+        </div>
+    </div>
+</nav>
+  <div class="container">
+    <div class="post">
+      <div class="post-header">
+          <button class="back-button" onclick="goBack()">&#8592;</button>
+          <img src="https://scontent.fvca1-1.fna.fbcdn.net/v/t39.30808-6/476547426_1678851969709222_5028713653121561290_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGCrunWQc38v748JcVGBqsDzhojTsCj_0jOGiNOwKP_SDcvZ0mhnM6xEEhwAejTAvtIVwJgqmqb_XM5i-4OY_2w&_nc_ohc=Qczpa-MJtd0Q7kNvgFRvJBS&_nc_oc=AdgF3IoimoplgPA1dMHh_evrQ0zE9FQ6n6bn306XsZk0QzxtZN253-0O_5LNf1JcoVmxnHhuiSJPUTmT9ElfZDYp&_nc_zt=23&_nc_ht=scontent.fvca1-1.fna&_nc_gid=A8mhg4R2nm9PtV1S2i_XOC2&oh=00_AYGwpEg_siAs801-lvXmmucXX7c5vW_-a1HdnJsTSYw2wA&oe=67D30AFD" alt="Avatar" class="avatar">
+          <span class="username">ao's lover</span>
+      </div>
+      <!-- Carousel cho nhiều hình ảnh -->
+      <div class="post-image">
+        <div class="carousel">
+          <p><strong>Câu Lạc Bộ:</strong> Dairu Foudation</p>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/banner.jpg" alt="Hình ảnh 1" onclick="openLightbox(0)">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/thanhvien.jpg" alt="Hình ảnh 2" onclick="openLightbox(1)">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/thanhvien1.jpg" alt="Hình ảnh 3" onclick="openLightbox(2)">
+                </div>
+            </div>
+            <!-- Nút điều hướng -->
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+      <div class="post-actions">
+        <button id="like-button" class="like-button" onclick="toggleLike()">
+          <span id="like-icon">🤍</span> Like
+        </button>
+          <span id="like-count">0</span> lượt thích
+          <button onclick="sharePost()">🔗 Chia sẻ</button>
+      </div>
+      <div class="post-caption">
+          <p>Chúng em đã tham gia cuộc thi sáng tạo do Dariu Foundation tổ chức với tâm thế vô cùng tự tin và hào hứng. Ý tưởng của chúng em là thiết kế một trang web giúp học sinh tham khảo đầy đủ tài liệu của tất cả các môn học, đồng thời hỗ trợ các em tự học và rèn luyện ngay tại nhà. Ý tưởng này đã gây ấn tượng mạnh và lọt vào top 3 ý tưởng xuất sắc nhất của chương trình.
+          <br>  
+          Để đạt được thành công ấy, cả nhóm đã nỗ lực hết mình và đồng lòng thực hiện từng bước một cách bài bản:
+          <br>
+            -Bước 1: Phác thảo cơ chế hoạt động chung của trang web, đảm bảo tính năng và mục tiêu rõ ràng.<br>
+            -Bước 2: Xây dựng bố cục, thiết kế giao diện và lựa chọn bài học phù hợp với nhu cầu của học sinh từng khối.<br>
+            -Bước 3: Thiết kế form mẫu cho trang web trên máy tính, tạo nền tảng kỹ thuật vững chắc.<br>
+            -Bước 4: Chuẩn bị và thuyết trình về trang web một cách thuyết phục trước ban giám khảo.
+</p>
+      </div>
+      <div class="post-comments">
+          <h3>Bình luận</h3>
+          <div id="comments-section">
+              <!-- Các bình luận sẽ được thêm vào đây -->
+          </div>
+          <textarea id="comment-input" placeholder="Viết bình luận..."></textarea>
+          <button onclick="addComment()">Đăng</button>
+      </div>
+    </div>
+  </div>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="Lightbox Image">
+    </div>
+    <button class="lightbox-control prev" onclick="changeLightboxImage(-1)">&#10094;</button>
+    <button class="lightbox-control next" onclick="changeLightboxImage(1)">&#10095;</button>
+  </div>
+    <script src="script4.js"></script>
+</body>
+</html>

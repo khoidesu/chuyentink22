@@ -1,0 +1,121 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    text-shadow: 2px 2px #000000;
+  }
+  h3 {
+    text-shadow: 1px 2px #000000;
+  }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Đảm bảo trang luôn đủ chiều cao màn hình */
+}
+
+/* Phần đầu trang với ảnh bìa full màn hình và hiệu ứng parallax */
+header.fullscreen-banner {
+    height: 100vh; /* Chiều cao bằng màn hình */
+    background-image: url('img/banner.jpg'); /* Thay bằng đường dẫn ảnh của bạn */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hiệu ứng parallax */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden; /* Đảm bảo lớp phủ không tràn ra ngoài */
+}
+
+header.fullscreen-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(4px); /* Điều chỉnh mức độ làm mờ */
+    z-index: 1;
+}
+
+header.fullscreen-banner > * {
+    position: relative;
+    z-index: 2; /* Đảm bảo nội dung nằm trên lớp phủ */
+}
+
+header.fullscreen-banner .banner-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header.fullscreen-banner .banner-content p {
+    font-size: 1.5em;
+}
+
+/* Phần thân trang với 6 ô web con */
+main {
+    flex: 1; /* Phần thân chiếm phần còn lại của trang */
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.box {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Khoảng cách giữa các ô */
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box-image {
+    flex: 1;
+    max-width: 40%; /* Ảnh chiếm 40% chiều rộng */
+}
+
+.box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh phủ kín khung */
+}
+
+.box-content {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.box-content p {
+    font-size: 1.2em;
+    color: #666;
+}

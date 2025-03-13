@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Chiều cao bằng màn hình */
+    overflow: hidden; /* Ngăn body cuộn */
+}
+
+.container {
+    width: 100%;
+    height: 100vh; /* Chiều cao bằng màn hình */
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    padding: 20px; /* Thêm padding để nội dung không dính sát vào viền */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước container */
+}
+
+.post {
+    max-width: 800px; /* Giới hạn chiều rộng của bài đăng */
+    margin: 0 auto; /* Căn giữa bài đăng */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative; /* Để căn chỉnh nút quay lại */
+}
+
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    color: #0095f6; /* Màu sắc tùy chỉnh */
+}
+
+.back-button:hover {
+    color: #0077cc; /* Màu sắc khi hover */
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.post-image {
+    width: 100%;
+    height: 600px; /* Chiều cao cố định */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn với kích thước ô mà không bị méo */
+}
+
+.post-actions {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.post-caption {
+    text-align: justify; /* Căn đều chữ */
+    padding: 10px;
+    line-height: 1.6; /* Tăng khoảng cách giữa các dòng để dễ đọc hơn */
+    font-size: 16px; /* Cỡ chữ */
+    color: #333; /* Màu chữ */
+    max-height: 200px; /* Giới hạn chiều cao tối đa */
+    overflow-y: auto; /* Tự động hiển thị thanh cuộn khi nội dung vượt quá chiều cao */
+    border: 1px solid #ddd; /* Thêm viền để phân biệt */
+    border-radius: 8px; /* Bo góc */
+    margin: 10px 0; /* Thêm khoảng cách với các phần tử khác */
+}
+
+.post-comments {
+    padding: 10px;
+}
+
+.post-comments h3 {
+    margin-bottom: 10px;
+}
+
+#comments-section {
+    margin-bottom: 10px;
+}
+
+#comment-input {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+
+.post-comments button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-comments button:hover {
+    background-color: #0077cc;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    color: #000; /* Màu chữ mặc định */
+}
+
+.like-button.liked {
+    color: red; /* Màu chữ khi đã like */
+}
+
+#like-icon {
+    margin-right: 5px;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.lightbox-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 24px;
+    z-index: 1001;
+}
+
+.lightbox-control.prev {
+    left: 20px;
+}
+
+.lightbox-control.next {
+    right: 20px;
+}
+
+.lightbox-control:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
